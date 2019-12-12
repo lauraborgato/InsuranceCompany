@@ -27,7 +27,9 @@ namespace InsuranceCompany.Services
         public IEnumerable<Policy> GetListOfPoliciesByUserName(string userName)
         {
             var client = _clientService.getClientByEmail(userName);
-            return _policies.Where(policy => policy.ClientId.Equals(client.Id));
+            if(client != null)
+                return _policies.Where(policy => policy.ClientId.Equals(client.Id));
+            return null;
         }
 
         public Policy GetPolicyByPolicyNumber(string id) => _policies.Where(policy => policy.Id.Equals(id)).FirstOrDefault();
