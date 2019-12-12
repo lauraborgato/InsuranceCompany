@@ -33,7 +33,7 @@ namespace InsuranceCompany.test
         }
 
         [Test]
-        public void Get_Policy_By_Policy_Number()
+        public void Get_Policy_By_Policy_Number_Must_Return_A_Policy()
         {
             _client.Setup(x => x.getClientByEmail("a0ece5db-cd14-4f21-812f-966633e7be86")).Returns(new Client()
             {
@@ -55,7 +55,23 @@ namespace InsuranceCompany.test
         }
 
         [Test]
-        public void Get_Client_By_Policy_Number()
+        public void Get_Policy_By_Policy_Number_Must_Return_Null()
+        {
+            _client.Setup(x => x.getClientByEmail("a0ece5db-cd14-4f21-812f-966633e7be86")).Returns(new Client()
+            {
+                Email = "britneyblankenship@quotezart.com",
+                Id = "a0ece5db-cd14-4f21-812f-966633e7be86",
+                Name = "Britney",
+                Role = "admin"
+            });
+
+            var policy = _service.GetPolicyByPolicyNumber("1234566");
+
+            Assert.IsNull(policy);
+        }
+
+        [Test]
+        public void Get_Client_By_Policy_Number_Must_Return_A_Policy()
         {
             _client.Setup(x => x.getClientById("a0ece5db-cd14-4f21-812f-966633e7be86")).Returns(new Client()
             {
@@ -72,6 +88,22 @@ namespace InsuranceCompany.test
             Assert.AreEqual(client.Id, "a0ece5db-cd14-4f21-812f-966633e7be86");
             Assert.AreEqual(client.Name, "Britney");
             Assert.AreEqual(client.Role, "admin");
+        }
+
+        [Test]
+        public void Get_Client_By_Policy_Number_Must_Return_Null()
+        {
+            _client.Setup(x => x.getClientById("a0ece5db-cd14-4f21-812f-966633e7be86")).Returns(new Client()
+            {
+                Email = "britneyblankenship@quotezart.com",
+                Id = "a0ece5db-cd14-4f21-812f-966633e7be86",
+                Name = "Britney",
+                Role = "admin"
+            });
+
+            var client = _service.getClientByPolicyNumber("6t868686");
+
+            Assert.IsNull(client);
         }
     }
 }

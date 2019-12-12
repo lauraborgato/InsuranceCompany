@@ -62,7 +62,9 @@ namespace InsuranceCompany.Services
         public Client getClientByPolicyNumber(string policyNumber)
         {
             var policy = GetPolicyByPolicyNumber(policyNumber);
-            return _clientService.getClientById(policy.ClientId);
+            if(policy != null)
+                return _clientService.getClientById(policy.ClientId);
+            return null;
         }
     }
 }
