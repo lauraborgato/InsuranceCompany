@@ -1,8 +1,6 @@
 using System.Security.Claims;
 using System.Text;
-using InsuranceCompany.IServices;
-using InsuranceCompany.Models;
-using InsuranceCompany.Services;
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,6 +8,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+
+using InsuranceCompany.IServices;
+using InsuranceCompany.Models;
+using InsuranceCompany.Services;
 
 namespace InsuranceCompany
 {

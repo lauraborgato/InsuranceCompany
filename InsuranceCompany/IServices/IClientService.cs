@@ -1,5 +1,6 @@
-using InsuranceCompany.Models;
 using System.Threading.Tasks;
+
+using InsuranceCompany.Models;
 
 namespace InsuranceCompany.IServices
 {

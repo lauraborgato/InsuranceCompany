@@ -1,5 +1,6 @@
-using InsuranceCompany.IServices;
 using Microsoft.AspNetCore.Mvc;
+
+using InsuranceCompany.IServices;
 
 namespace InsuranceCompany.Controllers
 {

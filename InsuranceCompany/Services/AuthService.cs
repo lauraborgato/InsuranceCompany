@@ -1,12 +1,13 @@
 using System;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-using InsuranceCompany.IServices;
 using Microsoft.Extensions.Options;
-using InsuranceCompany.Models;
 using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
+
+using InsuranceCompany.IServices;
+using InsuranceCompany.Models;
 
 namespace InsuranceCompany.Services
 {
