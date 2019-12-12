@@ -34,7 +34,7 @@ This project was made using
 - Open a terminal
 - `cd InsuranceCompany`
 - `dotnet restore`
-- `dotnet build && dotnetrun'
+- `dotnet build && dotnetrun`
 
 ### APIs
 
